@@ -1,0 +1,116 @@
+/* Add your style below */
+@font-face {
+  font-family: 'ITC Korinna Regular';
+  src: url("../fonts/ITC\ Korinna\ Regular.otf") format("trueType"),
+  url("../fonts/ITC\ Korinna\ Regular.otf") format("trueType");
+}
+
+@font-face {
+  font-family: 'Gyparody';
+  src:  url("../fonts/gyparody\ rg.ttf") format("trueType"),
+  url("../fonts/gyparody\ rg.ttf") format("trueType");
+}
+body {
+  background-color: #aaa;
+  font-family: 'ITC Korinna Regular', sans-serif;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  font-family: 'Gyparody', sans-serif;
+  text-align: center;
+}
+
+/* setup -  grid layout */
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 75px;
+  gap: 2px;
+  background-color: black;
+  width: 100%;
+}
+
+/* Style the category and question divs */
+.category, .question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: #FFD700;
+  font-size: 20px;
+  text-transform: uppercase; /* Only applies to category but won't affect question */
+}
+
+/* Style the game info container */
+#gameInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category, .question {
+      font-size: 16px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .category, .question {
+      font-size: 14px; /* Even smaller font size for very small screens */
+  }
+  header {
+      font-size: 18px; /* Smaller header font size for very small screens */
+  }
+}
+
+/* Modal styles (already provided) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: blue;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Remove initial style for gameBoard divs as we have set up the grid */
+#gameBoard div {
+  width: auto; /* Reset width */
+  height: auto; /* Reset height */
+  border-style: none; /* No border */
+  border-color: none; /* No border color */
+  border-width: 0; /* No border width */
+}
